@@ -16,7 +16,7 @@ class HomeController extends Controller
               return redirect('/login');
           }*/
   
-          return view('Home.index', ['username'=>$req->session()->get('UserName')]);
+          return view('Home.customerCreate', ['customername'=>$req->session()->get('CustomerName')]);
           
       }
   
@@ -26,7 +26,7 @@ class HomeController extends Controller
         return view('Home.customerlist')->with('customers', $customers);
   */
   
-        $customers=Manager::where('UserType','customer')->get();
+        $customers=Manager::where('CustomerType','customer')->get();
         return view('Home.customerlist')->with('customers', $customers);
       }
   
@@ -38,7 +38,7 @@ class HomeController extends Controller
   
       }
   
-        public function customerStore(empRequest $req){
+        public function customerStore(customerRequest $req){
   
         if($req->hasFile('myimg')){
   
@@ -48,17 +48,17 @@ class HomeController extends Controller
                  
                   $user = new Manager();
   
-                  $user->UserName     = $req->username;
-                  $user->Name         = $req->name;
-                  $user->Password     = $req->password;
-                  $user->Email        = $req->email;
-                  $user->ContactNo    = $req->contno;
-                  $user->Gender       = $req->gender;
-                  $user->UserType     = $req->type;
-                  $user->Address      = $req->address;
-                  $user->Propic       = $file->getClientOriginalName();
+                  $customer->CustomerName     = $req->customername;
+                  $customer->Name         = $req->name;
+                  $customerr->Password     = $req->password;
+                  $customer->Email        = $req->email;
+                  $customer->ContactNo    = $req->contno;
+                  $customer->Gender       = $req->gender;
+                  $customer->UserType     = $req->type;
+                  $customer->Address      = $req->address;
+                  $customer->Propic       = $file->getClientOriginalName();
   
-                  if($user->save())
+                  if($customer->save())
                   {
                       return redirect()->route('Home.customerlist');
                   }
@@ -73,7 +73,7 @@ class HomeController extends Controller
       }
   
   
-      public function empEdit($id){
+      public function customerEdit($id){
          
        $customers=Manager::find($id);
        return view ('Home.customerEdit',$customers);
@@ -86,7 +86,7 @@ class HomeController extends Controller
                /*  $customers = Manager::find($id);
         
                  
-                  $customers->UserName     = $req->username;
+                  $customers->customerName     = $req->customername;
                   $customers->Name         = $req->name;
                   $customers->Password     = $req->password;
                   $customers->Email        = $req->email;
@@ -105,17 +105,17 @@ class HomeController extends Controller
   
                 if($file->move('upload', $file->getClientOriginalName())){
                  
-                  $user = Manager::find($id);
+                  $customer = Manager::find($id);
   
-                  $user->UserName     = $req->username;
-                  $user->Name         = $req->name;
-                  $user->Password     = $req->password;
-                  $user->Email        = $req->email;
-                  $user->ContactNo    = $req->contno;
-                  $user->Gender       = $req->gender;
-                  $user->UserType     = $req->type;
-                  $user->Address      = $req->address;
-                  $user->Propic       = $file->getClientOriginalName();
+                  $customer->UserName     = $req->username;
+                  $customer->Name         = $req->name;
+                  $customer->Password     = $req->password;
+                  $customer->Email        = $req->email;
+                  $customer->ContactNo    = $req->contno;
+                  $customer->Gender       = $req->gender;
+                  $customer->UserType     = $req->type;
+                  $customer->Address      = $req->address;
+                  $customer->Propic       = $file->getClientOriginalName();
   
                   if($user->save())
                   {
@@ -146,8 +146,8 @@ class HomeController extends Controller
   
       public function profile(Request $req)
       {
-           $user= $req->session()->get('UserName');
-           $customers=Manager::where('UserName', $manager)->get();
+           $customer= $req->session()->get('CustomerName');
+           $customers=Manager::where('CustomerName', $manager)->get();
            //echo $customers;             	 
              return view('Home.profile')->with('customers', $customers);
            

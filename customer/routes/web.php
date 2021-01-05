@@ -10,14 +10,14 @@ Route::get('/', function () {
 
 
 Route::get('/', function () {
-    return view ('customerCreate');
+    return view ('Home.customerCreate');
 });
 Route::get('/login',  'loginController@index');
 Route::post('/login', 'loginController@verify');
 
 Route::group(['middleware'=>['sess']], function() {
 
-Route::get('/home',            'HomeController@index')->name('Home.index');
+Route::get('/Home',            'HomeController@index')->name('Home.index');
 
 Route::get('/profile',          'HomeController@profile')->name('Home.profile');
 
