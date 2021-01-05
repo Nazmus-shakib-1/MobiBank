@@ -9,8 +9,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/customer', function () {
-    return ('welcome to Customer site');
+Route::get('/', function () {
+    return view ('customerCreate');
 });
 Route::get('/login',  'loginController@index');
 Route::post('/login', 'loginController@verify');
