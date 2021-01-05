@@ -11,8 +11,8 @@
             <legend>Login</legend>
         <table>
             <tr>
-                <td>Username</td>
-                <td><input type="text" name="username"></td>
+                <td>Customername</td>
+                <td><input type="text" name="customername"></td>
             </tr>
             <tr>
                 <td>Password</td>

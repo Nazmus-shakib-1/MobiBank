@@ -4,7 +4,7 @@
 	<title>Edit Page</title>
 </head>
 <body>
-	<a href="{{route('home.index')}}">Back</a> |
+	<a href="{{route('Home.index')}}">Back</a> |
 	<a href="/logout">logout</a>
 	<br>
 
@@ -13,11 +13,11 @@
 
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<fieldset>
-				<legend>Edit User</legend>
+				<legend>Edit Customer</legend>
 			<table border="1">
                 <tr>
-					<td>Username</td>
-					<td><input type="text" name="username" value="{{$UserName}}"></td>
+					<td>Customername</td>
+					<td><input type="text" name="Customername" value="{{$CustomerName}}"></td>
 				</tr>
 				<tr>
 					<td>Name</td>
@@ -40,7 +40,7 @@
 					<td><input type="text" name="gender" value="{{$Gender}}"></td>
 				</tr>
 				<tr>
-					<td>User Type</td>
+					<td>Customer Type</td>
 					<td><input type="text" name="type" value="{{$UserType}}"></td>
 				</tr>
 				<tr>

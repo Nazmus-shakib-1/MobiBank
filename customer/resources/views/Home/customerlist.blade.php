@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User list page</title>
+	<title>Customer list page</title>
 </head>
 <body>
 
-	<h3>All Employees</h3>
-	<a href="/home">Back</a> |
+	<h3>All Customers</h3>
+	<a href="/Home">Back</a> |
 	<a href="/logout">logout</a>
 
 	<br>
@@ -15,22 +15,22 @@
 	<table border="1">
 		<tr>
 			<td>ID</td>
-			<td>USERNAME</td>
+			<td>CUSTOMERNAME</td>
 			<td>NAME</td>
 			<td>EMAIL</td>
 			<td>CONTACT NUMBER</td>
 		</tr>
 
-		@for($i=0; $i < count($employees); $i++)
+		@for($i=0; $i < count($customers); $i++)
 		<tr>
-			<td>{{$employees[$i]['id']}}</td>
-			<td>{{$employees[$i]['UserName']}}</td>
-			<td>{{$employees[$i]['Name']}}</td>
-			<td>{{$employees[$i]['ContactNo']}}</td>
+			<td>{{$customers[$i]['id']}}</td>
+			<td>{{$customers[$i]['CustomerName']}}</td>
+			<td>{{$customers[$i]['Name']}}</td>
+			<td>{{$customers[$i]['ContactNo']}}</td>
 			<td>
-				<a href="{{route('home.empDetails', $employees[$i]['id'])}}">Details</a> |
-				<a href="{{route('home.empEdit', $employees[$i]['id'])}}">Edit</a> |
-				<a href="{{route('home.empDestroyView', $employees[$i]['id'])}}">Delete</a> 
+				<a href="{{route('Home.customerDetails', $customers[$i]['id'])}}">Details</a> |
+				<a href="{{route('Home.customerEdit', $customers[$i]['id'])}}">Edit</a> |
+				<a href="{{route('Home.customerDestroyView', $customers[$i]['id'])}}">Delete</a> 
 			</td>
 		</tr>
 		@endfor

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User list page</title>
+	<title>Customer list page</title>
 </head>
 <body>
 
-	<h3>All Employees</h3>
-	<a href="/home">Back</a> |
+	<h3>All Customers</h3>
+	<a href="/Home">Back</a> |
 	<a href="/logout">logout</a>
 
 	<br>
@@ -15,26 +15,26 @@
 	<table border="1">
 		<tr>
 			<td>ID</td>
-			<td>USERNAME</td>
+			<td>CUSTOMERNAME</td>
 			<td>NAME</td>
 			<td>EMAIL</td>
 			<td>CONTACT NUMBER</td>
 			<td>GENDER</td>
-			<td>USER TYPE</td>
+			<td>CUSTOMER TYPE</td>
 			<td>ADDRESS</td>
 			<td>PICTURE</td>
 		</tr>
 
-		@for($i=0; $i < count($employees); $i++)
+		@for($i=0; $i < count($customers); $i++)
 		<tr>
-			<td>{{$employees[$i]['ID']}}</td>
-			<td>{{$employees[$i]['UserName']}}</td>
-			<td>{{$employees[$i]['Name']}}</td>
-			<td>{{$employees[$i]['ContactNo']}}</td>
-			<td>{{$employees[$i]['Gender']}}</td>
-			<td>{{$employees[$i]['UserType']}}</td>
-			<td>{{$employees[$i]['Address']}}</td>
-			<td>{{$employees[$i]['Propic']}}</td>
+			<td>{{$customers[$i]['ID']}}</td>
+			<td>{{$customers[$i]['CUSTOMERName']}}</td>
+			<td>{{$customers[$i]['Name']}}</td>
+			<td>{{$customers[$i]['ContactNo']}}</td>
+			<td>{{$customers[$i]['Gender']}}</td>
+			<td>{{$customers[$i]['CUSTOMERType']}}</td>
+			<td>{{$customers[$i]['Address']}}</td>
+			<td>{{$customers[$i]['Propic']}}</td>
 		@endfor
 	</table>
 
