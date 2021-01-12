@@ -86,7 +86,7 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `employees` (`id`, `name`, `password`, `created_at`, `updated_at`) VALUES
+INSERT INTO `customers` (`id`, `name`, `password`, `created_at`, `updated_at`) VALUES
 (2, 'lota', 'lota', NULL, '2021-01-03 23:32:21'),
 (14, 'Bob', 'Work in some department', '2021-01-04 04:06:23', '2021-01-05 17:17:32'),
 (17, 'Max', 'Some customer', '2021-01-05 17:26:17', '2021-01-05 17:26:17');
